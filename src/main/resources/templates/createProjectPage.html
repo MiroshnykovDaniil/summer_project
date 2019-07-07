@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Manager Info</title>
+</head>
+<body>
+<!-- Include _menu.html -->
+<th:block th:include="/_menu"></th:block>
+
+
+<div>
+    <a th:href="@{/createProject}">Create project</a>
+    | &nbsp;
+    <a th:href="@{/viewEffort}">View effort</a>
+    | &nbsp;
+    <a th:href="@{/reviewProject}">View project</a>
+    | &nbsp;
+</div>
+
+<h2>User Info Page</h2>
+<h3>Welcome : <span th:utext="${#request.userPrincipal.name}"></span></h3>
+<b>This is protected page!</b>
+
+<br/><br/>
+<div>Here we create new project</div>
+
+<form action="#" th:action="@{createProject}" th:object="${project}" method="post">
+    <p>ID: <input type="text" th:field="*{projectId}"/></p>
+    <p>Name: <input type="text" th:field="*{projectName}"/></p>
+    <p>Short name: <input type="text" th:field="*{shortName}"/></p>
+    <p>description: <input type="text" th:field="*{description}"/></p>
+    <p>initialEffort: <input type="text" th:field="*{initialEffort}"/></p>
+    <p>timeStart: <input type="text" th:field="*{timeStart}"/></p>
+    <p>timeEnd: <input type="text" th:field="*{timeEnd}"/></p>
+    <p>risks: <input type="text" th:field="*{risks}"/></p>
+    <p><input type="submit" value="Submit" />
+
+
+
+</form>
+
+</body>
+
+</html>

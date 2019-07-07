@@ -1,0 +1,36 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <title>Creating report</title>
+</head>
+<body>
+<!-- Include _menu.html -->
+<th:block th:include="/_menu"></th:block>
+
+    <table class="table table-bordered" width="100%" id="dataTable" cellspacing="0">
+        <thead>
+        <tr>
+            <tr>Project name</tr>
+            <th>Project short name</th>
+            <th>description</th>
+            <th>start date</th>
+            <th>end date</th>
+            <th>initial effort</th>
+            <th>result effort</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr th:each="appel : ${list}">
+            <td th:text="${appel.projectName}"></td>
+            <td th:text="${appel.shortName}"></td>
+            <td th:text="${appel.description}"></td>
+            <td th:text="${appel.timeStart}"></td>
+            <td th:text="${appel.timeEnd}"></td>
+            <td th:text="${appel.initialEffort}"></td>
+            <td th:text="${appel.resultEffort}"></td>
+        </tr>
+        </tbody>
+    </table>
+
+
+</body>
